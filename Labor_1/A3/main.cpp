@@ -1,3 +1,11 @@
+// Dateiname: main.cpp
+// Autoren: Wolfram Ladurner <wolait01@hs-esslingen.de>
+//          Moritz Frenzel <mofrit01@hs-esslingen.de>
+// Beschreibung: Labyrinth-generator
+// Datum: 2015/03/22 - 2015/03/22
+// Aufwand: 10 Min.
+// Modifikationen:
+
 #include <iostream>
 #include <curses.h>
 
