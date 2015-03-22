@@ -1,5 +1,6 @@
 #include <iostream>
 #include <curses.h>
+#include <cstring>
 
 using namespace std;
 
@@ -19,16 +20,12 @@ char labyrinth[kZeilen][kSpalten + 2];
 
 // Labyrinth mit # füllen
 void initialisieren() {
-	/* HIER */
-
-
-
-
-
-
-
-
-
+     for(auto& row : labyrinth)
+     {
+        strcpy(row, string(11, MAUER).c_str());
+        row[11] = NL;
+        row[12] = EOS;
+     }
 }
 
 // Labyrinth auf dem Bildschirm ausgeben
@@ -36,9 +33,11 @@ void drucken() {
 	// Console frei machen
 	system("clear");
 	// Labyrinth ausgeben
-	/* HIER */
 
-
+    for(auto& row: labyrinth)
+    {
+        cout << row;
+    }
 
 
 
@@ -61,6 +60,7 @@ void erzeugen() {
 	int posx = kSpalten / 2;
 	int posy = kZeilen / 2;
 	labyrinth[posy][posx] = ICH;
+    noecho();
 	drucken();
 	while (c != 'q') {
 		drucken();
