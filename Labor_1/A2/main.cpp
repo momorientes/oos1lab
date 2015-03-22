@@ -1,3 +1,13 @@
+// Dateiname: main.cpp
+// Autoren: Wolfram Ladurner <wolait01@hs-esslingen.de>
+//          Moritz Frenzel <mofrit01@hs-esslingen.de>
+// Beschreibung: Program, das den Nutzer fragt, wie viele ganze Zahlen eingelesen werden
+//  sollen. Das Program liest dann die gewünschte Anzahl von ganzen Zahlen in ein dynamisches Array
+//  ein. Im Anschluss werden alle Zahlen im Array sowie deren Durchschnitt ausgegeben. 
+// Datum: 2015/03/22 - 2015/03/22
+// Aufwand: 10 Min.
+// Modifikationen: 
+
 #include <iostream>
 using namespace std;
 
