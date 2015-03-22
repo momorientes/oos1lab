@@ -3,11 +3,11 @@
 
 using namespace std;
 
-// Größe des Labyrinths
+// GrÃ¶ÃŸe des Labyrinths
 const int kZeilen = 11;
 const int kSpalten = 11;
 
-// Zeichen, die im Labyrinth vorkommen können,
+// Zeichen, die im Labyrinth vorkommen kÃ¶nnen,
 // NL = new line, EOS = end of string
 enum Symbole { MAUER = '#', WEG = ' ', MUENZE = ':', NL = '\n', 
 	           EOS = '\0', ICH = 'X', GEIST = 'G' };
@@ -17,7 +17,7 @@ enum Symbole { MAUER = '#', WEG = ' ', MUENZE = ':', NL = '\n',
 // und die letzte ein \0-Zeichen, damit die Ausgabe leichter wird.
 char labyrinth[kZeilen][kSpalten + 2];
 
-// Labyrinth mit # füllen
+// Labyrinth mit # fÃ¼llen
 void initialisieren() {
 	/* HIER */
 
