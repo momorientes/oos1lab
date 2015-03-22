@@ -34,7 +34,7 @@ void initialisieren() {
 // Labyrinth auf dem Bildschirm ausgeben
 void drucken() {
 	// Console frei machen
-	system("cls");
+	system("clear");
 	// Labyrinth ausgeben
 	/* HIER */
 
