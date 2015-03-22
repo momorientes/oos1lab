@@ -66,7 +66,7 @@ void erzeugen() {
 		drucken();
 		cout << "Laufen mit Pfeiltasten. Beenden mit q." << endl;
 		labyrinth[posy][posx] = WEG;
-		c = getch();
+		while( ERR == (c = getch()));
 		switch (int(c)) {
 			// oben
 		case 72: posy = max(1, posy - 1); break;
