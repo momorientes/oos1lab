@@ -36,26 +36,30 @@ char name[15];
 // Name des Spielers eingeben
 char * enterName(char str[])
 {
-
-
-
-
-
+    cout << "Namen eingeben: ";
+    cin >> str;
 }
 
 // Den Computer zufällig waehlen lassen. 
 // Nutzen Sie srand(...) und rand().
 objectType randomChoice()
 {
-
-
-
-
+    //time based seed, enough entropy!
+    srand(time(NULL));
+    // get the choice
+    objectType choice = static_cast<objectType>(rand() % 3);
+    return choice;
 }
 
 // Die Wahl von STEIN etc. als String zurückgeben lassen
 char * object2str(objectType o)
 {
+    switch(o)
+    {
+        case SCHERE: return "Schere";
+        case STEIN: return "Stein";
+        case PAPIER: return "Papier";
+    }
 
 
 
