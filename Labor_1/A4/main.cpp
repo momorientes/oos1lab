@@ -60,44 +60,34 @@ char * object2str(objectType o)
         case STEIN: return "Stein";
         case PAPIER: return "Papier";
     }
-
-
-
-
-
-
-
-
-
 }
 
 // Einen Text mit dem Namen des Spielers und seiner Wahl ausgeben
 void showPlayer(player p)
 {
-
-
-
+    cout << "Spieler: " << p.name << "Wahl: " << p.choice << endl;
 }
 
 // Die Wahl des Spielers abfragen
 objectType enterChoice()
 {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   objectType choice;
+   char input[7];
+   cout << "schere, stein, oder papier? ";
+   cin >> input;
+   if(input == "schere")
+   {
+       choice = SCHERE;
+   } else if(input == "stein")
+   {
+       choice = STEIN;
+   } else if (input == "papier")
+   {
+       choice = PAPIER;
+   } else {
+       exit(0);
+   }
+   return choice;
 }
 
 // Die Wahl bestimmen, die gewonnen hat
@@ -133,7 +123,7 @@ int main()
 	player player1, player2;
 	player1.name = "Computer";
 	player1.choice = randomChoice();
-	cout << "Der Computer hat sein Wahl getroffen." << endl;
+	cout << "Der Computer hat seine Wahl getroffen." << endl;
 	player2.name = enterName(name);
 	player2.choice = enterChoice();
 	showPlayer(player1);
