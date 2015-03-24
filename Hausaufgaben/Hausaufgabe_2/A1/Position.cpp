@@ -20,10 +20,10 @@ Position::Position(int x, int y) {
 
 // Schritt nach vorne in Richtung r um einen Schritt
 // Es kann aber nicht in Mauern hineingelaufen werden
-// *this wird entsprechend geändert
-// Der int mode = 0 gibt an, dass die Mauern berücksichtigt werden.
+// *this wird entsprechend geÃ¤ndert
+// Der int mode = 0 gibt an, dass die Mauern berÃ¼cksichtigt werden.
 // Wenn int != 0, dann kann auch durch Mauern gelaufen werden.
-// Dies ist für das Erstellen von Labyrinthen notwendig.
+// Dies ist fÃ¼r das Erstellen von Labyrinthen notwendig.
 Position & Position::schritt(Labyrinth & lab, int mode) {
 	Position tmp = *this;
 	switch (r) {

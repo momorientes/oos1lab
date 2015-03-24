@@ -1,4 +1,4 @@
-// Main für Hausaufgabe 2
+// Main fÃ¼r Hausaufgabe 2
 #include "Labyrinth.hpp"
 
 int main() {
