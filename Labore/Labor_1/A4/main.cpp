@@ -26,7 +26,7 @@ enum objectType { STEIN, SCHERE, PAPIER };
 // Struktur für einen Spieler bestehend aus Name und Wahl 
 // des Spielers
 struct player {
-	char * name;
+	const char * name;
 	objectType choice;
 };
 
@@ -53,7 +53,7 @@ objectType randomChoice()
 }
 
 // Die Wahl von STEIN etc. als String zurückgeben lassen
-char * object2str(objectType o)
+const char * object2str(objectType o)
 {
     switch(o)
     {
