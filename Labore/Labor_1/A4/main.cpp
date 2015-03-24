@@ -66,7 +66,7 @@ const char * object2str(objectType o)
 // Einen Text mit dem Namen des Spielers und seiner Wahl ausgeben
 void showPlayer(player p)
 {
-    cout << "Spieler: " << p.name << " Wahl: " << p.choice << endl;
+    cout << "Spieler: " << p.name << " Wahl: " << object2str(p.choice) << endl;
 }
 
 // Die Wahl des Spielers abfragen
