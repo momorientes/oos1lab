@@ -1,16 +1,14 @@
-#include <cstring.h>
-
 class MyString
 {
 	public:
 		MyString();
 		MyString(const char* cstring);
 		MyString(const MyString &myString);
-		~Mystring();
+		~MyString();
 		
 		void reserve(unsigned int c);
 		MyString& append(const MyString& str);
-		MyString& assign(const Mystring& str);
+		MyString& assign(const MyString& str);
 		const char* c_str();
 		unsigned int size();
 		unsigned int capacity();
