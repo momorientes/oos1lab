@@ -1,8 +1,8 @@
 // Datei PacMan.cpp
 #include <windows.h>
 #include <conio.h> 
-// conio.h für _getch() und _kbhit()
-// Achtung: Nicht Teil des Standards und daher abhängig vom Compiler
+// conio.h fÃ¼r _getch() und _kbhit()
+// Achtung: Nicht Teil des Standards und daher abhÃ¤ngig vom Compiler
 #include <iostream>
 #include "PacMan.hpp"
 using namespace std;
@@ -11,7 +11,7 @@ using namespace std;
 PacMan::PacMan(Labyrinth & l, Spieler & sp, Spieler gArr[], 
 	           int anzGeister) { 
 	schritte = 0;         // Anzahl der Spielschritte
-	muenzen = 0;          // Anzahl der Münzen im Labyrinth
+	muenzen = 0;          // Anzahl der MÃ¼nzen im Labyrinth
 	lab = &l;
 	s = &sp;
 	for (int i = 0; i < anzGeister; i++) {
@@ -20,24 +20,24 @@ PacMan::PacMan(Labyrinth & l, Spieler & sp, Spieler gArr[],
 	// Spieler in die Mitte des Labyrinths setzen
 	Position zentrum(lab->getSpalten() / 2, lab->getZeilen() / 2);
 	s->setPos(zentrum);
-	// Anzahl der Münzen vom Labyrinth übernehmen
+	// Anzahl der MÃ¼nzen vom Labyrinth Ã¼bernehmen
 	muenzen = lab->getMuenzen();
 }
 
-// Einen Schritt im Spiel ausführen
+// Einen Schritt im Spiel ausfÃ¼hren
 void PacMan::schritt() {
-	// Schritte zählen
+	// Schritte zÃ¤hlen
 	schritte++;
 	// Aktuelle Position des Spielers merken,
-	// so dass sie mit WEG überschrieben werden kann.
+	// so dass sie mit WEG Ã¼berschrieben werden kann.
 	Position postmp = s->getPos();
 	// Den Spieler einen Schritt machen lassen.
 	s->schritt(*lab);
-	// Wenn beim neuen Schritt eine Münze gefunden wurde ...
+	// Wenn beim neuen Schritt eine MÃ¼nze gefunden wurde ...
 	if (lab->istMuenzeAnPos(s->getPos())) {
-		// Anzahl der gesammelten Münzen des Spielers erhöhen
+		// Anzahl der gesammelten MÃ¼nzen des Spielers erhÃ¶hen
 		s->plusMuenze();
-		// Anzahl der vorhandenen Münzen reduzieren
+		// Anzahl der vorhandenen MÃ¼nzen reduzieren
 		muenzen--;
 	}
 	// den getanen Schritt des Spielers einzeichnen
@@ -54,18 +54,18 @@ void PacMan::schritt() {
 	// Jetzt laufen die Geister
 	if (schritte > 5) {
 		for (int i = 0; i < kAnzGeister; i++) {
-			// Geist-Zeichen löschen
+			// Geist-Zeichen lÃ¶schen
 			lab->zeichneChar(WEG, g[i]->getPos());
-			// Geist wählt zufällig seine Schrittrichtung
+			// Geist wÃ¤hlt zufÃ¤llig seine Schrittrichtung
 			g[i]->orientieren(*lab);
 			// Geist macht seinen Schritt
 			g[i]->schritt(*lab); 
 		}
 		// Geister einzeichnen
 		for (int i = 0; i < kAnzGeister; i++) {
-			// Geister sammeln Münzen
+			// Geister sammeln MÃ¼nzen
 			if (lab->istMuenzeAnPos(g[i]->getPos())) {
-				// Anzahl der vorhandenen Münzen reduzieren
+				// Anzahl der vorhandenen MÃ¼nzen reduzieren
 				muenzen--;
 			}
 			// Geist einzeichnen
@@ -76,22 +76,22 @@ void PacMan::schritt() {
 
 // Spiel spielen
 void PacMan::spielen() {
-	// Das Spiel läuft solange noch Münzen im Labyrinth sind
+	// Das Spiel lÃ¤uft solange noch MÃ¼nzen im Labyrinth sind
 	// und eine Geist nicht auf der Position des Spielers ist.
-	// Temporäre Variable für die Keyboard-Eingabe
+	// TemporÃ¤re Variable fÃ¼r die Keyboard-Eingabe
 	char c = 'x';
-	// Temporäre Variable, um die gewählte Richtung zu speichern
+	// TemporÃ¤re Variable, um die gewÃ¤hlte Richtung zu speichern
 	Richtung r = s->getPos().r;
 	// Position des Spielers einzeichnen
 	lab->zeichneChar(ICH, s->getPos());
-	// Temporäre Variable für die Abbruchbedingung der Spielschleife
+	// TemporÃ¤re Variable fÃ¼r die Abbruchbedingung der Spielschleife
 	bool cond = (muenzen > 1);
 	while (cond) {
 		// Eine Weile warten (Windows)
 		Sleep(700);
 		// Eine Weile warten (C++11)
 		// std::this_thread::sleep_for(std::chrono::milliseconds(700));
-		if (_kbhit()) { // wenn Taste gedrückt wurde ...
+		if (_kbhit()) { // wenn Taste gedrÃ¼ckt wurde ...
 			c = _getch();
 			switch (int(c)) {
 				// oben
@@ -107,7 +107,7 @@ void PacMan::spielen() {
 			}
 			s->setRichtung(r);
 		}
-		// Einen Spielschritt ausführen
+		// Einen Spielschritt ausfÃ¼hren
 		schritt();
 		// Neue Spielsituation anzeigen
 		lab->drucken();
@@ -115,7 +115,7 @@ void PacMan::spielen() {
 		cout << "Verbleibende Muenzen: " << muenzen << endl;
 		cout << schritte << ". Schritt" << endl << endl;
 		cout << "Zum Abbrechen q druecken" << endl;
-		// Prüfen, ob noch Münzen da sind 
+		// PrÃ¼fen, ob noch MÃ¼nzen da sind 
 		// und ob der Spieler noch nicht gefangen wurde
 		cond = (muenzen > 1);
 		for (int i = 0; i < kAnzGeister; i++) {

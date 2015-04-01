@@ -5,16 +5,16 @@
 #include "Spieler.hpp"
 
 class PacMan {
-	Labyrinth * lab;          // Labyrinth für das Spiel
+	Labyrinth * lab;          // Labyrinth fÃ¼r das Spiel
 	Spieler * s;              // Spieler, der das Spiel spielt
 	Spieler * g[kAnzGeister]; // Geister, die den Spieler jagen
 	int schritte;             // Anzahl der Spielschritte
-	int muenzen;              // Anzahl der Münzen im Labyrinth
+	int muenzen;              // Anzahl der MÃ¼nzen im Labyrinth
 public:
 	// Konstruktor
 	PacMan(Labyrinth & l, Spieler & sp, Spieler gArr[], 
 		   int anzGeister);
-	// Einen Schritt im Spiel ausführen
+	// Einen Schritt im Spiel ausfÃ¼hren
 	void schritt();
 	// Spiel spielen
 	void spielen();
