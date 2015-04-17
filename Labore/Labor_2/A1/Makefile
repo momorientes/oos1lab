@@ -5,5 +5,5 @@ SRC=main.cpp Spieler.cpp PacMan.cpp Labyrinth.cpp \
 	 MyString.cpp Position.cpp
 
 default: 
-	g++ -o main $(SRC) --std=c++11 $(INC) -lncurses
+	g++ -g -o main $(SRC) --std=c++11 $(INC) -lncurses
 

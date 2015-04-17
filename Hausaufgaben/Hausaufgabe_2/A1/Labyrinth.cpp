@@ -11,6 +11,7 @@ Labyrinth::Labyrinth()
 	this->labZeilen = kZeilen;
 	this->labSpalten = kSpalten;
 	this->labAnzGeister = 0;
+	this->muenzen = 0;
 	
 	this->initialisieren();
 }

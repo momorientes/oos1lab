@@ -5,8 +5,8 @@
 #include <cstdlib>
 
 // Konvertierstruktoren
-Spieler::Spieler(const MyString& str): name(str), pos(0, 0) {}
-Spieler::Spieler(const char* str): name(str), pos(0, 0) {}
+Spieler::Spieler(const MyString& str): name(str), pos(0, 0), muenzen(0) {}
+Spieler::Spieler(const char* str): name(str), pos(0, 0), muenzen(0) {}
 
 // Position lesen/setzen
 Position& Spieler::getPos()
@@ -38,7 +38,7 @@ void Spieler::plusMuenze()
 // Schritt im Labyrinth machen
 Spieler& Spieler::schritt(Labyrinth& lab)
 {
-	pos.schritt(lab); 
+	this->pos = pos.schritt(lab); 
 	return *this;
 }
 
