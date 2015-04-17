@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Circle.hpp"
+#include "circle.hpp"
 using namespace std;
 
 // Hauptprogramm
