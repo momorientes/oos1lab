@@ -1,4 +1,5 @@
 #include "fifo.hpp"
+#include <iostream>
 Fifo::Fifo(int maxSize /*= 20*/): number(0), wPos(0), rPos(0)
 {
     this->maxSize = maxSize;
@@ -18,12 +19,19 @@ int Fifo::push(char c)
         this->ptr[this->wPos] = c;
         this->number++;
         this->wPos++;
+
         //ringbuffer
         if (this->wPos == 20)
         {
             this->wPos = 0;
+            return 19;
         }
-        return this->wPos -1;
+        if(wPos == 0)
+        {
+            return 0;
+        } else {
+            return this->wPos -1;
+        }
     } else {
         return -1;
     }
@@ -39,6 +47,7 @@ char Fifo::pop()
         char c = this->ptr[this->rPos];
         this->ptr[this->rPos] = '\0';
         this->rPos++;
+        this->number--;
         //ringbuffer
         if(this->rPos == 20)
         {
