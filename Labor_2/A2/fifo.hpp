@@ -9,6 +9,11 @@ class Fifo {
 
         }
 
+        ~Fifo()
+        {
+            delete[] ptr;
+        }
+
         int push(char c)
         {
             if(!Fifo::isFull())
@@ -36,6 +41,7 @@ class Fifo {
             } else {
                 char c = ptr[rPos];
                 rPos++;
+                //ringbuffer
                 if(rPos == 20)
                 {
                     rPos = 0;
