@@ -5,18 +5,6 @@
 #include "PacMan.hpp"
 using namespace std;
 
-static int kbhit(void)
-{
-    int ch = getch();
-
-    if (ch != ERR) {
-		 ungetch(ch);
-		 return 1;
-	 } else {
-		 return 0;
-	 }
-}
-
 // Konstruktor
 PacMan::PacMan(Labyrinth & l, Spieler & sp, Spieler gArr[], 
 	           int anzGeister) { 
@@ -89,8 +77,7 @@ void PacMan::spielen() {
 	// Das Spiel läuft solange noch Münzen im Labyrinth sind
 	// und eine Geist nicht auf der Position des Spielers ist.
 	// Temporäre Variable für die Keyboard-Eingabe
-	printw("PacMan::spielen\n");
-	char c = 'x';
+	int c = 'x';
 	// Temporäre Variable, um die gewählte Richtung zu speichern
 	Richtung r = s->getPos().r;
 	// Position des Spielers einzeichnen
@@ -102,20 +89,18 @@ void PacMan::spielen() {
 		// usleep(700);
 		// Eine Weile warten (C++11)
 		std::this_thread::sleep_for(std::chrono::milliseconds(700));
-		c = getch();
-		if (kbhit()) { // wenn Taste gedrückt wurde ...
-			c = getch();
+		if ((c = getch()) != ERR) { // wenn Taste gedrückt wurde ...
 			switch (int(c)) {
 				// oben
-			case 72: r = OBEN; break;
+			case KEY_UP: r = OBEN; break;
 				// links
-			case 75: r = LINKS; break;
+			case KEY_LEFT: r = LINKS; break;
 				// rechts
-			case 77: r = RECHTS; break;
+			case KEY_RIGHT: r = RECHTS; break;
 				// unten
-			case 80: r = UNTEN; break;
+			case KEY_DOWN: r = UNTEN; break;
 				// q = quit
-			case 113: muenzen = 0; break;
+			case 'q': muenzen = 0; break;
 			}
 			s->setRichtung(r);
 		}
@@ -123,10 +108,12 @@ void PacMan::spielen() {
 		schritt();
 		// Neue Spielsituation anzeigen
 		lab->drucken();
-		cout << "Gesammelte Muenzen: " << s->getMuenzen() << endl;
-		cout << "Verbleibende Muenzen: " << muenzen << endl;
-		cout << schritte << ". Schritt" << endl << endl;
-		cout << "Zum Abbrechen q druecken" << endl;
+		printw("Gesammelte Muenzen: %d\n", s->getMuenzen());
+		printw("Verbleibende Muenzen: %d\n", muenzen);
+		printw("%d. Schritt\n\n", schritte);
+		printw("Zum Abbrechen q druecken\n");
+		// printw("Letzte Richtung: %d, letzte Taste: %d\n", r, c);
+		refresh();
 		// Prüfen, ob noch Münzen da sind 
 		// und ob der Spieler noch nicht gefangen wurde
 		cond = (muenzen > 1);

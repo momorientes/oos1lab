@@ -16,6 +16,7 @@ int min(int x, int y) {
 Position::Position(int x, int y) {
 	posx = x;
 	posy = y;
+	r = Richtung::OBEN; 
 }
 
 // Schritt nach vorne in Richtung r um einen Schritt

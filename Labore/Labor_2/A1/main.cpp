@@ -1,12 +1,14 @@
 #include "PacMan.hpp"
 #include <curses.h>
+#include <iostream>
 
-// const bool kErzeugen = true;
+using namespace std;
 
 int main(int argc, char** argv) {
 	// init curses
 	initscr();
 	keypad(stdscr, TRUE);
+	timeout(0);
 
 	Labyrinth lab;
 
