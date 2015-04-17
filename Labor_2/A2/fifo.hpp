@@ -5,8 +5,36 @@ class Fifo {
     public:
         Fifo(): maxSize(20), number(0), wPos(0), rPos(0)
         {
-            ptr = new char[maxSize];
+            ptr = new char[maxSize]{0}; //initilize with null bytes
 
+        }
+
+        int push(char c)
+        {
+            if(!Fifo::isFull())
+            {
+                ptr[wPos] = c;
+                number++;
+                wPos++;
+                return wPos -1;
+//TODO: add ringbuffer
+            } else {
+                return -1;
+            }
+
+        }
+
+        char pop()
+        {
+//TODO: add ringbuffer
+            if(ptr[rPos] == '\0')
+            {
+                return '\0';
+            } else {
+                char c = ptr[rPos];
+                rPos++;
+                return c;
+            }
         }
 
         bool isEmpty(){
@@ -33,8 +61,13 @@ class Fifo {
         {
             return wPos;
         }
+
         int getRPos()
         {
             return rPos;
+        }
+        int getSize()
+        {
+            return number;
         }
 };
