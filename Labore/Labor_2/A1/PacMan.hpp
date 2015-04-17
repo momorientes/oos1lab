@@ -4,6 +4,9 @@
 #include "Labyrinth.hpp"
 #include "Spieler.hpp"
 
+// Anzahl Geister
+const int kAnzGeister = 3;
+
 class PacMan {
 	Labyrinth * lab;          // Labyrinth für das Spiel
 	Spieler * s;              // Spieler, der das Spiel spielt

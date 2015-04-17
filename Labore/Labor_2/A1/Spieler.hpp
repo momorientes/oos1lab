@@ -7,8 +7,8 @@
 
 class Spieler 
 {
-	MyString* name;           // Name des Spielers
-	Position *pos;            // Position des Spielers
+	MyString name;           // Name des Spielers
+	Position pos;            // Position des Spielers
 	int muenzen;              // Anzahl bereits gesammelter Münzen
 
 public:
@@ -17,7 +17,7 @@ public:
 	Spieler(const char* str);
 
 	// Position lesen/setzen
-	Positon getPos();
+	Position& getPos();
 	void setPos(Position& pos);
 	// Richtung setzen
 	void setRichtung(Richtung dir);
@@ -28,7 +28,7 @@ public:
 	// Schritt im Labyrinth machen
 	Spieler& schritt(Labyrinth& lab);
 	// Orientieren im Labyrinth
-	void oreintieren(Labyrinth& lab);
+	void orientieren(Labyrinth& lab);
 
 	void spielen();
 };

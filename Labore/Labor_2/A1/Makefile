@@ -1,5 +1,9 @@
 INC=-I../../../Hausaufgaben/Hausaufgabe_2/A1/ \
 	 -I../../../Hausaufgaben/Hausaufgabe_2/A2/
 
-default: g++ -o main main.cpp Spieler.cpp PacMan.cpp --std=c++11
+SRC=main.cpp Spieler.cpp PacMan.cpp Labyrinth.cpp \
+	 MyString.cpp Position.cpp
+
+default: 
+	g++ -o main $(SRC) --std=c++11 $(INC) -lncurses
 

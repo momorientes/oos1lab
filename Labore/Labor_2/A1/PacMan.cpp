@@ -1,11 +1,21 @@
 // Datei PacMan.cpp
-#include <windows.h>
-#include <conio.h> 
-// conio.h für _getch() und _kbhit()
-// Achtung: Nicht Teil des Standards und daher abhängig vom Compiler
+#include <curses.h>
 #include <iostream>
+#include <thread>
 #include "PacMan.hpp"
 using namespace std;
+
+static int kbhit(void)
+{
+    int ch = getch();
+
+    if (ch != ERR) {
+		 ungetch(ch);
+		 return 1;
+	 } else {
+		 return 0;
+	 }
+}
 
 // Konstruktor
 PacMan::PacMan(Labyrinth & l, Spieler & sp, Spieler gArr[], 
@@ -79,6 +89,7 @@ void PacMan::spielen() {
 	// Das Spiel läuft solange noch Münzen im Labyrinth sind
 	// und eine Geist nicht auf der Position des Spielers ist.
 	// Temporäre Variable für die Keyboard-Eingabe
+	printw("PacMan::spielen\n");
 	char c = 'x';
 	// Temporäre Variable, um die gewählte Richtung zu speichern
 	Richtung r = s->getPos().r;
@@ -87,12 +98,13 @@ void PacMan::spielen() {
 	// Temporäre Variable für die Abbruchbedingung der Spielschleife
 	bool cond = (muenzen > 1);
 	while (cond) {
-		// Eine Weile warten (Windows)
-		Sleep(700);
+		// Eine Weile warten (Linux)
+		// usleep(700);
 		// Eine Weile warten (C++11)
-		// std::this_thread::sleep_for(std::chrono::milliseconds(700));
-		if (_kbhit()) { // wenn Taste gedrückt wurde ...
-			c = _getch();
+		std::this_thread::sleep_for(std::chrono::milliseconds(700));
+		c = getch();
+		if (kbhit()) { // wenn Taste gedrückt wurde ...
+			c = getch();
 			switch (int(c)) {
 				// oben
 			case 72: r = OBEN; break;

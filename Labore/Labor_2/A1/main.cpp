@@ -1,10 +1,17 @@
 #include "PacMan.hpp"
+#include <curses.h>
 
-const bool kErzeugen = true;
+// const bool kErzeugen = true;
 
-int main() {
+int main(int argc, char** argv) {
+	// init curses
+	initscr();
+	keypad(stdscr, TRUE);
+
 	Labyrinth lab;
-	if (kErzeugen) {
+
+	// irgendein parameter übergeben? Labyrinth erzeugen!
+	if (argc > 1) {
 		lab.erzeugen();
 		lab.exportDatei("lab.txt");
 	}
@@ -18,6 +25,8 @@ int main() {
 		PacMan pm(lab, s, g, kAnzGeister);
 		pm.spielen();
 	}
+
+	endwin(); // free curses
 }
 
 
