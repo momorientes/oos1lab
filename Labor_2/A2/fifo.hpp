@@ -16,8 +16,12 @@ class Fifo {
                 ptr[wPos] = c;
                 number++;
                 wPos++;
+                //ringbuffer
+                if (wPos == 20)
+                {
+                    wPos = 0;
+                }
                 return wPos -1;
-//TODO: add ringbuffer
             } else {
                 return -1;
             }
@@ -26,13 +30,16 @@ class Fifo {
 
         char pop()
         {
-//TODO: add ringbuffer
             if(ptr[rPos] == '\0')
             {
                 return '\0';
             } else {
                 char c = ptr[rPos];
                 rPos++;
+                if(rPos == 20)
+                {
+                    rPos = 0;
+                }
                 return c;
             }
         }
