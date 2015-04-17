@@ -3,7 +3,7 @@ class Fifo {
     int maxSize, number, wPos, rPos;
     char* ptr;
     public:
-        Fifo();
+        Fifo(int maxSize=20);
         ~Fifo();
 
         int push(char c);

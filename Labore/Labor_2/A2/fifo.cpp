@@ -1,28 +1,29 @@
 #include "fifo.hpp"
-Fifo::Fifo(): maxSize(20), number(0), wPos(0), rPos(0)
+Fifo::Fifo(int maxSize /*= 20*/): number(0), wPos(0), rPos(0)
 {
-    ptr = new char[maxSize]{0}; //initilize with null bytes
+    this->maxSize = maxSize;
+    this->ptr = new char[this->maxSize]{0}; //initilize with null bytes
 
 }
 
 Fifo::~Fifo()
 {
-    delete[] ptr;
+    delete[] this->ptr;
 }
 
 int Fifo::push(char c)
 {
     if(!Fifo::isFull())
     {
-        ptr[wPos] = c;
-        number++;
-        wPos++;
+        this->ptr[this->wPos] = c;
+        this->number++;
+        this->wPos++;
         //ringbuffer
-        if (wPos == 20)
+        if (this->wPos == 20)
         {
-            wPos = 0;
+            this->wPos = 0;
         }
-        return wPos -1;
+        return this->wPos -1;
     } else {
         return -1;
     }
@@ -31,23 +32,24 @@ int Fifo::push(char c)
 
 char Fifo::pop()
 {
-    if(ptr[rPos] == '\0')
+    if(this->ptr[this->rPos] == '\0')
     {
         return '\0';
     } else {
-        char c = ptr[rPos];
-        rPos++;
+        char c = this->ptr[this->rPos];
+        this->ptr[this->rPos] = '\0';
+        this->rPos++;
         //ringbuffer
-        if(rPos == 20)
+        if(this->rPos == 20)
         {
-            rPos = 0;
+            this->rPos = 0;
         }
         return c;
     }
 }
 
 bool Fifo::isEmpty(){
-    if(number == 0)
+    if(this->number == 0)
     {
         return true;
     } else {
@@ -56,7 +58,7 @@ bool Fifo::isEmpty(){
 }
 
 bool Fifo::isFull(){
-    if(number == maxSize)
+    if(this->number == this->maxSize)
     {
         return true;
     } else {
@@ -68,15 +70,15 @@ bool Fifo::isFull(){
 //getters
 int Fifo::getWPos()
 {
-    return wPos;
+    return this->wPos;
 }
 
 int Fifo::getRPos()
 {
-    return rPos;
+    return this->rPos;
 }
 int Fifo::getSize()
 {
-    return number;
+    return this->number;
 }
 
