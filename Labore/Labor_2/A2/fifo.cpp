@@ -1,5 +1,4 @@
 #include "fifo.hpp"
-#include <iostream>
 Fifo::Fifo(int maxSize /*= 20*/): number(0), wPos(0), rPos(0)
 {
     this->maxSize = maxSize;
