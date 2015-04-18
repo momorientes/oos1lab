@@ -1,3 +1,5 @@
+#pragma once
+
 class Point {
     double x,y;
     public:

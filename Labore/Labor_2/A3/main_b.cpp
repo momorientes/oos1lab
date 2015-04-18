@@ -3,7 +3,7 @@
 using namespace std;
 
 // Hauptprogramm
-int main(void)
+int main_b(void)
 {
 	Point p1(1, 1), p2(2, 2), p3(3, 3), p4(4, 4), p5(5, 5);
 	Polygonline l1; 
