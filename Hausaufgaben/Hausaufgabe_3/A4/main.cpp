@@ -10,7 +10,7 @@ public:
 	Duck ();
 private:
 	long bankkonto;
-	string waehrung; //Symbol für Währung
+	string waehrung; //Symbol fÃ¼r WÃ¤hrung
 	static long familienbesitz;
 };
 
@@ -22,8 +22,8 @@ Duck::Duck () {
 }
 
 void zaster (/* HIER */, long money) {
-	/* HIER */ // bankkonto um money erhöhen
-	/* HIER */ // familienbesitz um money erhöhen
+	/* HIER */ // bankkonto um money erhÃ¶hen
+	/* HIER */ // familienbesitz um money erhÃ¶hen
 	cout << "Hier ist zaster, zaster eine " 
 		    "Freund-Funktion der Klasse Duck" << endl;
 	cout << "Die Einnahme ist " << money << " " << p.waehrung << endl;
