@@ -1,7 +1,7 @@
 #include <iomanip>
 #include "Fahrzeug.hpp"
 
-Fahrzeug::Fahrzeug(const char* kz): kz(kz), vin(zaehler++), km(0.0) {};
+Fahrzeug::Fahrzeug(const char* kz): kz(kz), vin(++zaehler), km(0.0) {};
 
 void Fahrzeug::fahren(double km) {
 	this->km += km;
