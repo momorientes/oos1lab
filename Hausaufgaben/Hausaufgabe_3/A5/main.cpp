@@ -1,5 +1,7 @@
 #include "Fahrzeug.hpp"
 
+using namespace std;
+
 int Fahrzeug::zaehler = 0;
 
 int main() {

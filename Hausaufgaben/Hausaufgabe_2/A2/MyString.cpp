@@ -56,17 +56,17 @@ MyString& MyString::assign(const MyString& str)
 	strncpy(strPtr, str.strPtr, strCapacity);
 }
 
-const char* MyString::c_str()
+const char* MyString::c_str() const
 {
 	return (const char*)strPtr;
 }
 
-unsigned int MyString::size()
+unsigned int MyString::size() const
 {
 	return strSize;
 }
 
-unsigned int MyString::capacity()
+unsigned int MyString::capacity() const
 {
 	return strCapacity;
 }
@@ -77,7 +77,7 @@ void MyString::clear()
 	strSize = 0;
 }
 
-bool MyString::empty()
+bool MyString::empty() const
 {
 	return strSize == 0;
 }
@@ -88,5 +88,32 @@ char& MyString::at(unsigned int i)
 		return at(1); // FIXME: Aufgabenstellung unklar
 
 	return strPtr[i-1];
+}
+
+// Operatoren +, ==, =, <<
+MyString MyString::operator+(const MyString& str)
+{
+	MyString res = MyString(*this);
+	return res.append(str);
+}
+
+bool MyString::operator==(const MyString& str) const
+{
+	return this->strSize == str.strSize && !strcmp(this->strPtr, str.strPtr);
+}
+
+MyString& MyString::operator=(const MyString& str)
+{
+	return this->assign(str);
+}
+
+char& MyString::operator[](int i)
+{
+	return at(i - 1);
+}
+
+std::ostream& operator<<(std::ostream& Stream, const MyString& str)
+{
+    return Stream << str.c_str();
 }
 
