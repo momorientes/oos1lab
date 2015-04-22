@@ -1,7 +1,4 @@
 class Fifo {
-
-    int maxSize, number, wPos, rPos;
-    char* ptr;
     public:
         Fifo(int maxSize=20);
         ~Fifo();
@@ -15,4 +12,7 @@ class Fifo {
         int getWPos();
         int getRPos();
         int getSize();
+    private:
+        int maxSize, number, wPos, rPos;
+        char* ptr;
 };
