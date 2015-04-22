@@ -1,4 +1,5 @@
 #include "point.hpp"
+#pragma once
 
 struct PlgElement {
 	Point point;

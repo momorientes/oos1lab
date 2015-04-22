@@ -1,3 +1,4 @@
+#pragma once
 #include "PlgElement.hpp"
 
 class Polygonline {

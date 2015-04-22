@@ -1,8 +1,7 @@
+#pragma once
 #include "point.hpp"
 class Circle
 {
-    Point centre;
-    double radius;
     public:
         Circle(Point centre = Point(), double radius = 0);
         Point getCentre();
@@ -11,4 +10,7 @@ class Circle
         void setRadius(double radius);
         void move(double dx, double dy);
         void print(bool endl=true);
+    private:
+        Point centre;
+        double radius;
 };
