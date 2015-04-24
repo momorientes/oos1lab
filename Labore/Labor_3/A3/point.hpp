@@ -4,13 +4,13 @@
 class Point {
     public:
         Point(double x = 0, double y = 0);
-        double getX();
-        double getY();
+        double getX() const;
+        double getY() const;
         void setX(double x);
         void setY(double y);
         void move(double dx, double dy);
-        void print(bool endl=true);
-        std::string toString();
+        void print(bool endl=true) const;
+        std::string toString() const;
     private:
         double x,y;
 

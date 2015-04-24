@@ -18,12 +18,12 @@ void Point::setY(double y)
     this->y = y;
 }
 
-double Point::getX()
+double Point::getX() const
 {
     return this->x;
 }
 
-double Point::getY()
+double Point::getY() const
 {
     return this->y;
 }
@@ -34,7 +34,7 @@ void Point::move(double dx, double dy)
     this->y += dy;
 }
 
-void Point::print(bool endl /*=true*/)
+void Point::print(bool endl /*=true*/) const
 {
     std::cout << "(" << this->x << ", ";
     std::cout << this->y <<")"; 
@@ -44,7 +44,7 @@ void Point::print(bool endl /*=true*/)
     }
 }
 
-std::string Point::toString()
+std::string Point::toString() const
 {
     using namespace std;
     ostringstream out;

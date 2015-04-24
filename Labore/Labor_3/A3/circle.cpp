@@ -17,12 +17,12 @@ void Circle::setRadius(double radius)
     this->radius = radius;
 }
 
-Point Circle::getCentre()
+Point Circle::getCentre() const
 {
     return this->centre;
 }
 
-double Circle::getRadius()
+double Circle::getRadius() const
 {
     return this->radius;
 }
@@ -32,7 +32,7 @@ void Circle::move(double dx, double dy)
     this->centre.move(dx, dy);
 }
 
-void Circle::print(bool endl/*=true*/)
+void Circle::print(bool endl/*=true*/) const
 {
     std::cout << "<";
     this->centre.print(false);
