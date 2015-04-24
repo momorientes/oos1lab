@@ -17,7 +17,7 @@ class MyString
 		void clear();
 		bool empty() const;
 		char& at(unsigned int i);
-		MyString operator+(const MyString& str);
+		MyString operator+(const MyString& str) const;
 		MyString& operator=(const MyString& str);
 		bool operator==(const MyString& str) const;
 		char& operator[](int i);

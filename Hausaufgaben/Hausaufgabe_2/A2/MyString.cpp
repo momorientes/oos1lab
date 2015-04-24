@@ -84,14 +84,14 @@ bool MyString::empty() const
 
 char& MyString::at(unsigned int i)
 {
-	if (i < 1 || i > strSize)
-		return at(1); // FIXME: Aufgabenstellung unklar
+	if (i >= strSize)
+		return at(0); // FIXME: Aufgabenstellung unklar
 
-	return strPtr[i-1];
+	return strPtr[i];
 }
 
 // Operatoren +, ==, =, <<
-MyString MyString::operator+(const MyString& str)
+MyString MyString::operator+(const MyString& str) const
 {
 	MyString res = MyString(*this);
 	return res.append(str);
@@ -109,7 +109,7 @@ MyString& MyString::operator=(const MyString& str)
 
 char& MyString::operator[](int i)
 {
-	return at(i - 1);
+	return at(i + 1);
 }
 
 std::ostream& operator<<(std::ostream& Stream, const MyString& str)

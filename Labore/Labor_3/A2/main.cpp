@@ -1,5 +1,7 @@
 #include "MyString.hpp"
 
+using namespace std;
+
 int main() {
 	const MyString cs("Ein konstanter String");
 	MyString s(cs);
