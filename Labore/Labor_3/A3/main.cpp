@@ -18,6 +18,10 @@ int main()
 	p = Point(s);
 	std::istringstream is(s);
 	is >> p;
+
+	c = Circle("<(2.2, 4.4), 6.6>");
+	cout << c.toString() << endl;
+
     cout << p.toString() << endl;
     Point p1(1, 1), p2(2, 2), p3(3, 3), p4(4, 4), p5(5, 5);
     Polygonline pl;

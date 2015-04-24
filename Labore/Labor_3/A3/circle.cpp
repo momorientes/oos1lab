@@ -8,6 +8,14 @@ Circle::Circle(Point centre/*=Point()*/, double radius /*=0*/)
     this->radius = radius;
 }
 
+Circle::Circle(const std::string s) {
+	float r = 0.0;
+	centre = Point(s);
+
+	sscanf(s.c_str(), "%*[^)]), %f>", &r);
+	radius = r;
+}
+
 void Circle::setCentre(Point centre)
 {
     this->centre = centre;
