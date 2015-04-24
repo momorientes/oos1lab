@@ -10,7 +10,8 @@ class Circle
         void setRadius(double radius);
         void move(double dx, double dy);
         void print(bool endl=true) const;
-        std::string toString();
+        std::string toString() const;
+        friend std::ostream& operator<<(std::ostream&, const Circle&);
     private:
         Point centre;
         double radius;

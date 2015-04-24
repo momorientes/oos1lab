@@ -51,3 +51,9 @@ std::string Point::toString() const
     out << "(" <<this->x << ", " << this->y << ")";
     return out.str();
 }
+
+std::ostream& operator<<(std::ostream& out, const Point& p)
+{
+    out << p.toString();
+    return out;
+}
