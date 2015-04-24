@@ -14,4 +14,5 @@ public:
 	Polygonline& appendPolygonline(Polygonline& line);
 	Polygonline& move(int dx, int dy);
 	Polygonline& print(bool endl = true);
+    std::string toString();
 };
