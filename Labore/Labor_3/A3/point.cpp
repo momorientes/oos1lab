@@ -8,6 +8,14 @@ Point::Point(double x/*=0*/, double y/*=0*/)
     this->y = y;
 }
 
+Point::Point(const std::string s) {
+	float x = 0.0, y = 0.0;
+
+	sscanf(s.c_str(), "%*[^(](%f, %f)", &x, &y);
+
+	this->x = x, this->y = y;
+}
+
 void Point::setX(double x)
 {
     this->x = x;
@@ -50,6 +58,11 @@ std::string Point::toString() const
     ostringstream out;
     out << "(" <<this->x << ", " << this->y << ")";
     return out.str();
+}
+
+std::istringstream& operator>>(std::istringstream & is, Point &p) {
+	p = Point(is.str());
+	return is;
 }
 
 std::ostream& operator<<(std::ostream& out, const Point& p)

@@ -4,6 +4,7 @@
 class Point {
     public:
         Point(double x = 0, double y = 0);
+        Point(const std::string s);
         double getX() const;
         double getY() const;
         void setX(double x);
@@ -17,3 +18,5 @@ class Point {
         double x,y;
 
 };
+
+std::istringstream& operator>>(std::istringstream & is, Point& p);
