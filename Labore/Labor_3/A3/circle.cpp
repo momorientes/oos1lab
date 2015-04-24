@@ -45,10 +45,17 @@ void Circle::print(bool endl/*=true*/) const
     }
 }
 
-std::string Circle::toString()
+std::string Circle::toString() const
 {
     using namespace std;
     ostringstream out;
     out << "<" << this->centre.toString() << ", " << this->radius << ">";
     return out.str();
 }
+
+std::ostream& operator<<(std::ostream& out, const Circle& c) 
+{
+    out << c.toString();
+    return out;
+}
+

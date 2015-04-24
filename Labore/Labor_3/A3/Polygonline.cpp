@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "Polygonline.hpp"
 
 // Konstruktoren
@@ -54,16 +55,31 @@ Polygonline& Polygonline::move(int dx, int dy) {
 }
 
 Polygonline& Polygonline::print(bool endl /*= true*/) {
-	std::cout << "|";	
-	PlgElement* tmp = start;
-	while (tmp) {
-		tmp->point.print(false);
-		if (tmp->next) // Trennzeichen nur, wenn noch was kommt...
-			std::cout << " - ";
-		tmp = tmp->next;
-	}
-	std::cout << "|" << (endl ? "\n" : "");
-	
+
+    std::cout << toString() << (endl ? "\n" : "");
 	return *this;
 }
 
+std::string Polygonline::toString() const
+{
+    std::ostringstream out;
+    out << "|";
+    PlgElement* tmp = this->start;
+    while(tmp)
+    {
+        out << tmp->point.toString();
+        if(tmp->next)
+        {
+            out << " - ";
+        }
+        tmp = tmp->next;
+    }
+    out << "|";
+    return out.str();
+}
+
+std::ostream& operator<<(std::ostream& out, const Polygonline& pl)
+{
+    out << pl.toString();
+    return out;
+}

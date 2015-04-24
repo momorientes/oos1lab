@@ -64,3 +64,9 @@ std::istringstream& operator>>(std::istringstream & is, Point &p) {
 	p = Point(is.str());
 	return is;
 }
+
+std::ostream& operator<<(std::ostream& out, const Point& p)
+{
+    out << p.toString();
+    return out;
+}
