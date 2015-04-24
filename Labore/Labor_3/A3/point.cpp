@@ -1,5 +1,6 @@
 #include "point.hpp"
 #include <iostream>
+#include <sstream>
 
 Point::Point(double x/*=0*/, double y/*=0*/)
 {
@@ -43,10 +44,10 @@ void Point::print(bool endl /*=true*/)
     }
 }
 
-std::string toString()
+std::string Point::toString()
 {
-    using std::string;
-    string tmp = "(";
-    //tmp.append(str(this->x));
-    return tmp;
+    using namespace std;
+    ostringstream out;
+    out << "(" <<this->x << ", " << this->y << ")";
+    return out.str();
 }
