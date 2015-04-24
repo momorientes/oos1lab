@@ -10,6 +10,7 @@ class Circle
         void setRadius(double radius);
         void move(double dx, double dy);
         void print(bool endl=true) const;
+        std::string toString();
     private:
         Point centre;
         double radius;

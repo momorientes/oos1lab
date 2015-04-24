@@ -1,5 +1,6 @@
 #include "circle.hpp"
 #include <iostream>
+#include <sstream>
 
 Circle::Circle(Point centre/*=Point()*/, double radius /*=0*/)
 {
@@ -42,4 +43,12 @@ void Circle::print(bool endl/*=true*/) const
     {
         std::cout << std::endl;
     }
+}
+
+std::string Circle::toString()
+{
+    using namespace std;
+    ostringstream out;
+    out << "<" << this->centre.toString() << ", " << this->radius << ">";
+    return out.str();
 }
