@@ -14,5 +14,6 @@ public:
 	Polygonline& appendPolygonline(Polygonline& line);
 	Polygonline& move(int dx, int dy);
 	Polygonline& print(bool endl = true);
-    std::string toString();
+    std::string toString() const;
+    friend std::ostream& operator<<(std::ostream&, const Polygonline&);
 };

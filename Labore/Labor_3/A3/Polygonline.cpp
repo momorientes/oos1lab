@@ -60,7 +60,7 @@ Polygonline& Polygonline::print(bool endl /*= true*/) {
 	return *this;
 }
 
-std::string Polygonline::toString()
+std::string Polygonline::toString() const
 {
     std::ostringstream out;
     out << "|";
@@ -78,3 +78,8 @@ std::string Polygonline::toString()
     return out.str();
 }
 
+std::ostream& operator<<(std::ostream& out, const Polygonline& pl)
+{
+    out << pl.toString();
+    return out;
+}
