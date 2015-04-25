@@ -3,6 +3,7 @@
 #include "point.hpp"
 #include "circle.hpp"
 #include "Polygonline.hpp"
+#include "main_strings.cpp"
 
 int main()
 {
@@ -21,6 +22,9 @@ int main()
 
 	c = Circle("<(2.2, 4.4), 6.6>");
 	cout << c.toString() << endl;
+	cout << "main_strings:" << endl;
+    main_strings();
+	 cout << "/main_strings" << endl;
 
     cout << p.toString() << endl;
     Point p1(1, 1), p2(2, 2), p3(3, 3), p4(4, 4), p5(5, 5);
@@ -33,5 +37,5 @@ int main()
     cout << pl.toString() << endl;
     cout << pl << endl;
 
-    return 0;
+	 return 0;
 }

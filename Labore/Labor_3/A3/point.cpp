@@ -11,7 +11,7 @@ Point::Point(double x/*=0*/, double y/*=0*/)
 Point::Point(const std::string s) {
 	float x = 0.0, y = 0.0;
 
-	sscanf(s.c_str(), "%*[^(](%f, %f)", &x, &y);
+	sscanf(s.substr(s.find("(")).c_str(), "(%f, %f)", &x, &y);
 
 	this->x = x, this->y = y;
 }

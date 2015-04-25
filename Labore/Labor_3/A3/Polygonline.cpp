@@ -12,6 +12,15 @@ Polygonline::Polygonline(Point point) {
 	end = start;
 }
 
+Polygonline::Polygonline(const std::string s) {
+	size_t pos = 0;
+	start = nullptr;
+	end = nullptr;
+	do {
+		addPoint(Point(s.substr(pos++)));
+	} 	while ((pos = s.find("-", pos)) != std::string::npos);
+}
+
 // Destruktor
 Polygonline::~Polygonline() {
 	while (start != nullptr) {

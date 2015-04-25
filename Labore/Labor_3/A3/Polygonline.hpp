@@ -1,4 +1,5 @@
 #pragma once
+#include <string> 
 #include "PlgElement.hpp"
 
 class Polygonline {
@@ -8,6 +9,7 @@ class Polygonline {
 public:
 	Polygonline();
 	Polygonline(Point point);
+	Polygonline(const std::string s);
 	~Polygonline();
 
 	Polygonline& addPoint(Point point);

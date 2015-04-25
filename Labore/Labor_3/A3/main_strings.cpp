@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Circle.hpp"
+#include "circle.hpp"
 #include "Polygonline.hpp"
 using namespace std;
 
 // Hauptprogramm
-int main(void) {
+int main_strings(void) {
   string str1 ("(1.1,2.1)");
   string str2 ("<(5.5, 6.6), 10.1>");
   string str3 ("|(1.1,1.2) - (2.1, 2.2) -(3.1,3.2) |");
