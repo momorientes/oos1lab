@@ -37,5 +37,33 @@ int main()
     cout << pl.toString() << endl;
     cout << pl << endl;
 
+	 // 3.3.2.f
+	cout << "Bitte Objektstring eingeben: ";
+	string in;
+	getline(cin, in);
+	switch (in.c_str()[0])
+	{
+	case '(': {
+		Point ip = Point(in);
+		cout << "Point: " << ip << endl;
+		break;
+	}
+
+	case '<': {
+		Circle ic = Circle(in);
+		cout << "Circle: " << ic << endl;
+		break;
+	}
+
+	case '|': {
+		Polygonline il = Polygonline(in);
+		cout << "Polygonline: " << il << endl;
+		break;
+	}
+
+	default:
+		cout << "ungültige Eingabe - '" << in << "'" << endl;
+	}
+
 	 return 0;
 }
