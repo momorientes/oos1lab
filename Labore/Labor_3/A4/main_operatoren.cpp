@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
-#include "Circle.hpp"
-#include "Polygonline.hpp"
+// #include "Circle.hpp"
+// #include "Polygonline.hpp"
 using namespace std;
 
 // Hauptprogramm
-int main(void)
+int main_operatoren(void)
 {
 	Point p1(0,0);
 	const Point p2(2,2);

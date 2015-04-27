@@ -12,8 +12,14 @@ class Point {
         void move(double dx, double dy);
         void print(bool endl=true) const;
         std::string toString() const;
-        friend std::ostream& operator<<(std::ostream&, const Point&);
-
+        Point operator+(const Point& p);
+		  Point operator-(const Point& p);
+		  Point operator-();
+		  Point operator++();
+		  Point operator++(int);
+		  friend std::ostream& operator<<(std::ostream&, const Point&);
+		  friend Point operator+(const double d, const Point &p);
+		  
     private:
         double x,y;
 

@@ -30,7 +30,7 @@ Polygonline::~Polygonline() {
 	}
 }
 
-Polygonline& Polygonline::addPoint(Point point) {
+Polygonline& Polygonline::addPoint(const Point point) {
 	PlgElement* tmp = new PlgElement(point);
 	if (start == nullptr) {
 		start = tmp;
@@ -43,7 +43,7 @@ Polygonline& Polygonline::addPoint(Point point) {
 	return *this;
 }
 
-Polygonline& Polygonline::appendPolygonline(Polygonline& line) {
+Polygonline& Polygonline::appendPolygonline(const Polygonline& line) {
 	PlgElement* tmp = line.start;
 	while (tmp) {
 		addPoint(tmp->point);
@@ -87,6 +87,15 @@ std::string Polygonline::toString() const
     return out.str();
 }
 
+Polygonline& Polygonline::operator+(const Point &p) {
+	addPoint(p);
+	return *this;
+}
+
+Polygonline& Polygonline::operator+(const Polygonline &l) {
+	appendPolygonline(l);
+	return *this;
+}
 std::ostream& operator<<(std::ostream& out, const Polygonline& pl)
 {
     out << pl.toString();

@@ -4,6 +4,7 @@
 #include "circle.hpp"
 #include "Polygonline.hpp"
 #include "main_strings.cpp"
+#include "../A4/main_operatoren.cpp"
 
 int main()
 {
@@ -64,6 +65,11 @@ int main()
 	default:
 		cout << "ungültige Eingabe - '" << in << "'" << endl;
 	}
+
+	// 3.4
+	cout << "3.4: " << endl;
+	main_operatoren();
+	cout << "/3.4" << endl;
 
 	 return 0;
 }

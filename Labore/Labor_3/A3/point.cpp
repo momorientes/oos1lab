@@ -70,3 +70,30 @@ std::ostream& operator<<(std::ostream& out, const Point& p)
     out << p.toString();
     return out;
 }
+
+Point Point::operator+(const Point& p) {
+	return Point(x + p.x, y + p.y);
+}
+
+Point Point::operator-(const Point& p) {
+	return Point(x - p.y, y - p.y);
+}
+
+Point Point::operator-() {
+	return Point(-x, -y);
+}
+
+Point Point::operator++() {
+	Point p = *this;
+	move(1, 1);
+	return p;
+}
+
+Point Point::operator++(int) {
+	move(-1, -1);
+	return *this;
+}
+Point operator+(const double d, const Point &p) {
+	return Point(p.x + d, p.y + d); 
+}
+
