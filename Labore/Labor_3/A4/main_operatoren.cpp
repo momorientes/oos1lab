@@ -13,6 +13,7 @@ int main_operatoren(void)
 	Circle c(p1, 1.1);
 	cout << "Circle c: " << c << endl;
 	p1 = p1 + 0.5;
+	cout << "p1: " << p1 << endl;
 	p1 = 0.5 + p1;
 	cout << "p1: " << p1 << endl;
 	cout << "p2: " << p2 << endl;
