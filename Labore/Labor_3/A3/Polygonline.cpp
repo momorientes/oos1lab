@@ -16,6 +16,11 @@ Polygonline::Polygonline(const std::string s) {
 	size_t pos = 0;
 	start = nullptr;
 	end = nullptr;
+	
+	// nix tun, wenn kein Punkt enthalten
+	if (s.find("(") == std::string::npos)
+		return;
+
 	do {
 		addPoint(Point(s.substr(pos++)));
 	} 	while ((pos = s.find("-", pos)) != std::string::npos);
