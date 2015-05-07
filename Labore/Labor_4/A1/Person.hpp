@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-// Klasse für alle Personen, die Medien ausleihen können
+// Klasse fÃ¼r alle Personen, die Medien ausleihen kÃ¶nnen
 class Person {
 	// Name der Person
 	string name;
@@ -14,9 +14,9 @@ class Person {
 public:
 	// Standardkonstruktor
 	Person(string name, int dauer = 0);
-	// den Namen zurückliefern
+	// den Namen zurÃ¼ckliefern
 	string getName() const;
-	// die Ausliehdauer zurückliefern
+	// die Ausliehdauer zurÃ¼ckliefern
 	int getAusleihdauer() const;
 	// die Person auf der Konsole ausgeben
 	void print() const;

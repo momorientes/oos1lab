@@ -8,10 +8,10 @@
 int main() {
 	// Ulaute etc. in der Konsole zulassen
 	setlocale(LC_ALL, "");
-	// Bibliothek mit 100 Plätzen initialisieren
+	// Bibliothek mit 100 PlÃ¤tzen initialisieren
 	Bibliothek bib(100);
-	// Bücher und DVDs erstellen
-	Buch b1("C++: das umfassende Handbuch", "Jürgen Wolf", 
+	// BÃ¼cher und DVDs erstellen
+	Buch b1("C++: das umfassende Handbuch", "JÃ¼rgen Wolf", 
 		    "Galileo Press", 2014);
 	Buch b2("C++ - der Einstieg", "Arnold Willemer", "Wiley", 2014);
 	Buch b3("Der C++-Programmierer", "Rainer Grimm", "O'Reilly", 
@@ -19,16 +19,16 @@ int main() {
 	Buch b4("C++ for Dummies", "Stephen R. Davies", "Wiley", 2012);
 	Buch b5("C++ lernen und professionell anwenden", 
 		    "Ulla Kirch und Peter Prinz", "mitp", 2012);
-	Buch b6("BeagleBone für Einsteiger", "Matt Richardson", 
+	Buch b6("BeagleBone fÃ¼r Einsteiger", "Matt Richardson", 
 		    "O'Reilly", 2014);
-	DVD d1("Die Rächer von C++", "DVD ex", 1984, 666);
+	DVD d1("Die RÃ¤cher von C++", "DVD ex", 1984, 666);
 	DVD d2("Ganz nah dabei - Raumgestaltung in Kitas \
-für 0- bis 3-Jährige", "Cornelsen", 2013, 30);
+fÃ¼r 0- bis 3-JÃ¤hrige", "Cornelsen", 2013, 30);
 	// Ein Buch und eine DVD ausgeben
 	b1.print();
 	d1.print();
-	// Kopien der Bücher und DVDs (Medien) in die Bibliothek 
-	// einfügen
+	// Kopien der BÃ¼cher und DVDs (Medien) in die Bibliothek 
+	// einfÃ¼gen
 	bib.mediumBeschaffen(b1);
 	bib.mediumBeschaffen(b2);
 	bib.mediumBeschaffen(b3);
@@ -40,10 +40,10 @@ für 0- bis 3-Jährige", "Cornelsen", 2013, 30);
 	// Bestand der Bibliothek ausgeben
 	bib.print();
 	// Personen anlegen
-	Student p1("Hägar", 12345678);
+	Student p1("HÃ¤gar", 12345678);
 	Student p2("Hilde", 87654321);
 	Dozent p3("Prof A", 4711);
-	// Suchen im Bibliotheksbestand durchführen
+	// Suchen im Bibliotheksbestand durchfÃ¼hren
 	bib.mediumSuchen("C++");
 	bib.mediumSuchen("Kita");
 	// Medien ausleihen

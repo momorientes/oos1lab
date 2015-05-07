@@ -3,7 +3,7 @@
 
 #include "Medium.hpp"
 
-// Klasse für die Bücher als Spezialisierung von Medium
+// Klasse fÃ¼r die BÃ¼cher als Spezialisierung von Medium
 class Buch {
 	// Autor(en) des Buches
 	string autor;

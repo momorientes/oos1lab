@@ -17,32 +17,32 @@ void suche(string s[], int * vptr[], int n) {
 	int i = 0;
 	int k = 0;
 	string str = "";
-	// cout für Ausgabe der Instanzvariablen konfigurieren
+	// cout fÃ¼r Ausgabe der Instanzvariablen konfigurieren
 	cout << hex << uppercase;
 	// Schauen, ob Instanzvariable i (vptr[i])
-	// evtl. mit Variable k (vptr[k]) zusammenfällt 
+	// evtl. mit Variable k (vptr[k]) zusammenfÃ¤llt 
 	while (i < n) {
 		// Wenn Variable i+k und i+k+1 identisch ...
 		if ((i+k < n-1) && (vptr[i+k] == vptr[i+k+1])) { 
-			// erhöhe k
+			// erhÃ¶he k
 			k++; 
 		} else {
 		// andernfalls gib die zusammengefallenen Variablen 
 		// auf einer Zeile aus
-			// Text für Ausgabe zusammenstellen
+			// Text fÃ¼r Ausgabe zusammenstellen
 			for (int m = i; m<=i+k; m++) {
 				str += s[m]+" ";
 			}
 			// Text und Wert ausgeben
 			speicherzelle(str, *vptr[i]);
-			// Hilfsvariablen für nächste Prüfung zurücksetzen
+			// Hilfsvariablen fÃ¼r nÃ¤chste PrÃ¼fung zurÃ¼cksetzen
 			str = "";
 			i += k+1;
 			k = 0;
 		}
 	}
 	cout << "---------------------" << endl << endl;
-	// Ursprünglicher Zustand von cout wieder herstellen
+	// UrsprÃ¼nglicher Zustand von cout wieder herstellen
 	cout.flags(cflags);
 }
 

@@ -5,7 +5,7 @@
 
 // Klasse Dozent als Spezialisierung von Person
 class Dozent {
-	// Prüfernummer des Dozenten
+	// PrÃ¼fernummer des Dozenten
 	int prfrNr;
 public:
 	// Standardkosntruktor

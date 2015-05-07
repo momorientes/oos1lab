@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-// Klasse Datum, ähnlich zu der in der Übung der Vorlesung
+// Klasse Datum, Ã¤hnlich zu der in der Ãœbung der Vorlesung
 class Datum {
 	// Elemente eines Datums
 	int tag, monat, jahr;
@@ -15,9 +15,9 @@ class Datum {
 public:
 	// Standardkonstruktor
 	Datum(int = 0, int = 0, int = 0);
-	// Konvertierkonstruktor für String
+	// Konvertierkonstruktor fÃ¼r String
 	Datum(const string &);
-	// Konvertierkonstruktor für C-String
+	// Konvertierkonstruktor fÃ¼r C-String
 	Datum(const char *);
 	// Operator + addiert eine Anzahl von Tagen zum Datum hinzu
 	Datum operator+(int tage);

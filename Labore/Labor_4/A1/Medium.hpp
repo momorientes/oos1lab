@@ -6,14 +6,14 @@
 #include "Person.hpp"
 using namespace std;
 
-// Klasse für die Medien, die in der Bibliothek ausgeliehen werden 
-// können
+// Klasse fÃ¼r die Medien, die in der Bibliothek ausgeliehen werden 
+// kÃ¶nnen
 class Medium {
 	// Titel des Mediums
 	const string titel;
 	// Verlag, der das Medium herausgibt
 	const string verlag;
-	// Jahr, in dem das Medium veröffentlicht wurde
+	// Jahr, in dem das Medium verÃ¶ffentlicht wurde
 	const int jahr;
 	// Typ des Mediums (z.B. Buch, DVD, ...)
 	// wird von den abgeleiteten Klassen festgelegt
@@ -29,11 +29,11 @@ public:
 	// Konstruktor
 	Medium(string t = "", string v = "", int j = 0, 
 		   string typ = "undef");
-	// Titel zurückliefern
+	// Titel zurÃ¼ckliefern
 	string getTitel() const;
-	// Typ zurückliefern
+	// Typ zurÃ¼ckliefern
 	string getTyp() const;
-	// Ausleiher zurückliefern
+	// Ausleiher zurÃ¼ckliefern
 	Person * getAusleiher() const;
 	// das Mediuem "ausleihen", d.h. Person p, von und bis eintragen
 	void ausleihen(Person & p, Datum von, Datum bis);

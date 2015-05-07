@@ -6,9 +6,9 @@
 #include "Person.hpp"
 #include "Datum.hpp"
 
-// Die Klasse Bibliothek verweist auf alle Medien (Bücher und DVDs),
+// Die Klasse Bibliothek verweist auf alle Medien (BÃ¼cher und DVDs),
 // die von Personen (Studierende und Dozenten) ausgeliehen werden 
-// können.
+// kÃ¶nnen.
 class Bibliothek {
 	// Anzahl der in der im Bibliothekskatalog verzeichneten Medien
 	int anz;
