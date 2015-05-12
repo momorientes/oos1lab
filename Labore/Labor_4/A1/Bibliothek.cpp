@@ -40,6 +40,15 @@ void Bibliothek::mediumBeschaffen(DVD & d) {
 // alle Medien auf der Konsole ausgeben, 
 // die im Titel das Suchwort enthalten
 void Bibliothek::mediumSuchen(string suchwort) {
+	cout << endl;
+	cout << "Suche nach \"" << suchwort << "\". Ergebnis:" << endl;
+	for (int i = 0; i < anz; i++) {
+		if (medien[i]->getTitel().find(suchwort) != string::npos) {
+			cout << endl;
+			cout << "Medium " << i << ":" << endl; 
+			medien[i]->print();
+		}
+	}
 }
 
 // im Medium mit der Nummer nr, die Person p als Ausleiher
