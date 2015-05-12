@@ -4,7 +4,7 @@
 #include "Person.hpp"
 
 // Klasse Student als Spezialisierung von Person
-class Student {
+class Student : public Person {
 	// Matrikelnummer des Studenten/der Studentin
 	int matNr;
 public:

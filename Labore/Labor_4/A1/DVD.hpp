@@ -4,7 +4,7 @@
 #include "Medium.hpp"
 
 // Klasse für die DVDs als Spezialisierung von Medium
-class DVD {
+class DVD : public Medium {
 	// Abspieldauer der DVD
 	const int dauer;
 public:

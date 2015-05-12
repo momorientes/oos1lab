@@ -2,6 +2,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 #include "Datum.hpp"
 #include "Person.hpp"
 using namespace std;
@@ -29,6 +30,8 @@ public:
 	// Konstruktor
 	Medium(string t = "", string v = "", int j = 0, 
 		   string typ = "undef");
+	// Destruktor
+	~Medium();
 	// Titel zurückliefern
 	string getTitel() const;
 	// Typ zurückliefern
