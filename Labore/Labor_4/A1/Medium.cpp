@@ -30,7 +30,8 @@ Person * Medium::getAusleiher() const {
 
 // das Medium "ausleihen", d.h. Person p, von und bis eintragen
 void Medium::ausleihen(Person & p, Datum von, Datum bis) {
-	ausleiher = &p;
+	delete ausleiher;
+	ausleiher = new Person(p);
 	this->von = von;
 	this->bis = bis;
 }

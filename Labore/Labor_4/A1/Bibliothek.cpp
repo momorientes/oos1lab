@@ -54,6 +54,7 @@ void Bibliothek::mediumSuchen(string suchwort) {
 // im Medium mit der Nummer nr, die Person p als Ausleiher
 // eintragen mit von-Datum d und bis-Datum d+p.ausleihdauer
 void Bibliothek::mediumAusleihen(int nr, Person & p, Datum d) {
+	medien[nr]->ausleihen(p, d, d + p.getAusleihdauer());
 }
 
 // alle Medien in der Konsole ausgeben
