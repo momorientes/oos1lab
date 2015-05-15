@@ -29,7 +29,7 @@ public:
 	void h(int i) { // überdeckt A::h
 		cout << "B::h(int)" << endl;
 	}
-	void h(string s) { // überdeckt A::h, überlädt B::h
+	void h(string s) { // überdeckt A::h, redefiniert A::h(string), überlädt B::h
 		cout << "B::h(string)" << endl;
 	}
 };
