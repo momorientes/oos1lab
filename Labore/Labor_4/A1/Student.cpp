@@ -2,7 +2,7 @@
 #include "Student.hpp"
 
 // Standardkonstruktor
-Student::Student(string name, int matNr) : Person(name, 4711), matNr(matNr) {
+Student::Student(string name, int matNr) : Person(name, 30), matNr(matNr) {
 }
 
 // Student auf der Konsole ausgeben

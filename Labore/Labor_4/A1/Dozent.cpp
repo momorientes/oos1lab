@@ -2,7 +2,7 @@
 #include "Dozent.hpp"
 
 // Standardkosntruktor
-Dozent::Dozent(string name, int prfrNr) : Person(name, 4712), prfrNr(prfrNr) {
+Dozent::Dozent(string name, int prfrNr) : Person(name, 91), prfrNr(prfrNr) {
 }
 
 // Dozenten auf der Konsole ausgeben
