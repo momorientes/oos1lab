@@ -5,7 +5,6 @@
 // Konstruktor
 Medium::Medium(string t /*= ""*/, string v /*= ""*/, int j /*= 0*/, 
 		string typ /*= "undef"*/) : titel(t), verlag(v), jahr(j), typ(typ) {
-	// ausleiher = new Person("kein");
 	ausleiher = nullptr;
 }
 

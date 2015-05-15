@@ -1,11 +1,15 @@
 #include <clocale>
+#include <cstdlib>
 #include "Bibliothek.hpp"
 #include "Buch.hpp"
 #include "DVD.hpp"
 #include "Student.hpp"
 #include "Dozent.hpp"
 
+extern "C" void __libc_freeres(void);
+
 int main() {
+	atexit(__libc_freeres); // free internal memory pools
 	// Ulaute etc. in der Konsole zulassen
 	setlocale(LC_ALL, "");
 	// Bibliothek mit 100 Plätzen initialisieren

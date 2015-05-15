@@ -1,16 +1,6 @@
 // Bibliothek.cpp
 #include "Bibliothek.hpp"
 
-/*
-// Anzahl der in der im Bibliothekskatalog verzeichneten Medien
-	int anz;
-	// maximale Anzahl der Medien im Katalog
-	const int maxAnz;
-	// Zeiger auf das Array der Zeiger auf die Medien im Katalog
-	// Deshalb wird hier ein Doppelzeiger genutzt.
-	Medium ** medien;
-*/
-
 // Standardkonstruktor
 Bibliothek::Bibliothek(int maxAnz /*= 1000*/) : anz(0), maxAnz(maxAnz) {
 	medien = new Medium*[maxAnz];
@@ -18,8 +8,8 @@ Bibliothek::Bibliothek(int maxAnz /*= 1000*/) : anz(0), maxAnz(maxAnz) {
 
 // Destruktor
 Bibliothek::~Bibliothek() {
-	// for (int i = 0; i < anz; i++)
-	// 	delete medien[i];
+	for (int i = 0; i < anz; i++)
+		delete medien[i];
 	delete[] medien;
 }
 
