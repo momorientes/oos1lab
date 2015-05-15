@@ -10,26 +10,26 @@ public:
 	void g(double d) {
 		cout << "A::g(double)" << endl;
 	}
-	void g(string s) {
+	void g(string s) { // überlädt A::g
 		cout << "A::g(string)" << endl;
 	}
 	void h(char c) {
 		cout << "A::h(char)" << endl;
 	}
-	void h(string s) {
+	void h(string s) { // überlädt A::h
 		cout << "A::h(string)" << endl;
 	}
 };
 
 class B : public A {
 public:
-	void g(int i) {
+	void g(int i) { // überdeckt A::g
 		cout << "B::g(int)" << endl;
 	}
-	void h(int i) {
+	void h(int i) { // überdeckt A::h
 		cout << "B::h(int)" << endl;
 	}
-	void h(string s) {
+	void h(string s) { // überdeckt A::h, überlädt B::h
 		cout << "B::h(string)" << endl;
 	}
 };
@@ -55,8 +55,8 @@ int main() {
 	b.g('a'); // Überlädt ... Überdeckt ... Redefiniert ... 
 	cout << "a.g(\"a\") "; 
 	a.g("a"); // Überlädt ... Überdeckt ... Redefiniert ... 
-	cout << "b.g(\"a\") "; 
-	b.g("a"); // Überlädt ... Überdeckt ... Redefiniert ...
+	// cout << "b.g(\"a\") "; 
+	// b.g("a"); // Überlädt ... Überdeckt ... Redefiniert ...
 	cout << "a.h(1) "; 
 	a.h(1);   // Überlädt ... Überdeckt ... Redefiniert ... 
 	cout << "b.h(1) "; 

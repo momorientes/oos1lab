@@ -1,0 +1,17 @@
+a.f A::f
+b.f A::f
+a.g(1.2) A::g(double)
+b.g(1.2) B::g(int)
+a.g(1) A::g(double)
+b.g(1) B::g(int)
+a.g('a') A::g(double)
+b.g('a') B::g(int)
+a.g("a") A::g(string)
+b.g("a") ========> Fehler!
+a.h(1) A::h(char)
+b.h(1) B::h(int)
+a.h('a') A::h(char)
+b.h('a') B::h(int)
+a.h("a") A::h(string)
+b.h("a") B::h(string)
+
