@@ -3,5 +3,6 @@
 
 class OneDimObject : public DrawingObject
 {
-
+	public: 
+		OneDimObject();
 };
