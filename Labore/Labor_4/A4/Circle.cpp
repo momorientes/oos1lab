@@ -4,13 +4,16 @@
 
 Circle::Circle(Point centre/*=Point()*/, double radius /*=0*/)
 {
-    this->centre = centre;
+    this->centre.setX(centre.getX());
+	 this->centre.setY(centre.getY());
     this->radius = radius;
 }
 
 Circle::Circle(const std::string s) {
 	float r = 0.0;
-	centre = Point(s);
+	Point tmp = Point(s);
+	centre.setX(tmp.getX());
+	centre.setY(tmp.getY());
 
 	sscanf(s.c_str(), "%*[^)]), %f>", &r);
 	radius = r;
@@ -18,7 +21,8 @@ Circle::Circle(const std::string s) {
 
 void Circle::setCentre(Point centre)
 {
-    this->centre = centre;
+    this->centre.setX(centre.getX());
+	 this->centre.setY(centre.getY());
 }
 
 void Circle::setRadius(double radius)

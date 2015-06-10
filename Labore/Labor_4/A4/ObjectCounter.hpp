@@ -1,11 +1,13 @@
+#pragma once
+
 class ObjectCounter {
 	const int id;
-	static int maxId;
-	static int number;
+	static unsigned int maxId;
+	static unsigned int number;
 public:
 	ObjectCounter();
 	~ObjectCounter();
 	int getId() const;
-	int getMaxId() const;
-	int getNumber() const;
+	static int getMaxId();
+	static int getNumber();
 };

@@ -1,6 +1,7 @@
 #include "DrawingObject.hpp"
+#include <iostream>
 
 DrawingObject::DrawingObject() {
 	if (debugConstructor) 
-		cout << "Konstruktor der Klasse DrawingObject, Objekt: " << (int)&this;
+		std::cout << "Konstruktor der Klasse DrawingObject, Objekt: " << getId() << std::endl;
 }

@@ -61,7 +61,9 @@ std::string Point::toString() const
 }
 
 std::istringstream& operator>>(std::istringstream & is, Point &p) {
-	p = Point(is.str());
+	Point tmp = Point(is.str());
+	p.setX(tmp.getX());
+	p.setY(tmp.getY());
 	return is;
 }
 

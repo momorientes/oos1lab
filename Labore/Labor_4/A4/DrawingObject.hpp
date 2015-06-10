@@ -1,7 +1,8 @@
 #pragma once
 #include "ObjectCounter.hpp"
 
-bool debugConstructor = false;
+extern bool debugConstructor;
+
 class DrawingObject: public ObjectCounter
 {
 	public:

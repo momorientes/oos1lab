@@ -4,7 +4,9 @@
 
 class Point : public DrawingObject {
     public:
-        Point(double x = 0, double y = 0);
+        using DrawingObject::operator=;
+
+		  Point(double x = 0, double y = 0);
         Point(const std::string s);
         double getX() const;
         double getY() const;

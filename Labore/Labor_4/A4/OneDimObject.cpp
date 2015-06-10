@@ -1,7 +1,7 @@
-#include "OneDimObject.h"
+#include "OneDimObject.hpp"
 #include <iostream>
 
-OneDimeObject::OneDimObject() {
+OneDimObject::OneDimObject() {
 	if (debugConstructor)
-		std::cout << "Konstruktor der Klasse OneDimObject, Objekt: " << (int)&this << std::endl;;
+		std::cout << "Konstruktor der Klasse OneDimObject, Objekt: " << getId() << std::endl;;
 }
