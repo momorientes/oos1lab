@@ -1,5 +1,5 @@
 #pragma once
-#include "DrawingObject.h"
+#include "DrawingObject.hpp"
 
 class OneDimObject : public DrawingObject
 {
