@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
+#include "DrawingObject.hpp"
 
-class Point {
+class Point : public DrawingObject {
     public:
         Point(double x = 0, double y = 0);
         Point(const std::string s);

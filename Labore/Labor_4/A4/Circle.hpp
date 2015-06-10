@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
-#include "point.hpp"
+#include "Point.hpp"
+#include "OneDimObject.hpp"
 
-class Circle
+class Circle : public OneDimObject
 {
     public:
         Circle(Point centre = Point(), double radius = 0);

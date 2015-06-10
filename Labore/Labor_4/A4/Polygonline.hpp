@@ -1,8 +1,9 @@
 #pragma once
 #include <string> 
 #include "PlgElement.hpp"
+#include "OneDimObject.hpp"
 
-class Polygonline {
+class Polygonline : public OneDimObject {
 	PlgElement* start;
 	PlgElement* end;
 
