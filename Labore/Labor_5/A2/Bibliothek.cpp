@@ -53,12 +53,12 @@ void Bibliothek::print() const {
 	cout << "Bibliothekskatalog:" << endl;
 	for (int i = 0; i < anz; i++) {
 		Medium *m = medien[i];
-		if (m->getTyp() == "Buch")
-			((Buch*)m)->print();
-		else if (m->getTyp() == "DVD")
-			((DVD*)m)->print();
-		else
-			m->print();
+	//	if (m->getTyp() == "Buch")
+	//		((Buch*)m)->print();
+	//	else if (m->getTyp() == "DVD")
+	//		((DVD*)m)->print();
+	//	else
+		m->print();
 	}
 }
 

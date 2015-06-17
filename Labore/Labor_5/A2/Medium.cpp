@@ -3,8 +3,7 @@
 #include "Medium.hpp"
 
 // Konstruktor
-Medium::Medium(string t /*= ""*/, string v /*= ""*/, int j /*= 0*/, 
-		string typ /*= "undef"*/) : titel(t), verlag(v), jahr(j), typ(typ) {
+Medium::Medium(string t /*= ""*/, string v /*= ""*/, int j /*= 0*/) : titel(t), verlag(v), jahr(j) {
 	ausleiher = nullptr;
 }
 
@@ -17,11 +16,6 @@ Medium::~Medium() {
 // Titel zurückliefern
 string Medium::getTitel() const {
 	return titel;
-}
-
-// Typ zurückliefern
-string Medium::getTyp() const {
-	return typ;
 }
 
 // Ausleiher zurückliefern
@@ -40,8 +34,6 @@ void Medium::ausleihen(Person & p, Datum von, Datum bis) {
 
 // Medium in der Konsole ausgeben
 void Medium::print() const {
-	cout << "------------------------------------------------" << endl;
-	cout << typ << endl;
 	cout << "Titel:       " << titel << endl;
 	cout << "Verlag:      " << verlag << endl;
 	cout << "Jahr:        " << jahr << endl;

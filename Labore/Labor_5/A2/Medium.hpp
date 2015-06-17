@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <typeinfo>
 #include "Datum.hpp"
 #include "Person.hpp"
 using namespace std;
@@ -28,8 +29,7 @@ class Medium {
 
 public:
 	// Konstruktor
-	Medium(string t = "", string v = "", int j = 0, 
-		   string typ = "undef");
+	Medium(string t = "", string v = "", int j = 0); 
 	// Destruktor
 	~Medium();
 	// Titel zurückliefern
@@ -41,7 +41,7 @@ public:
 	// das Mediuem "ausleihen", d.h. Person p, von und bis eintragen
 	void ausleihen(Person & p, Datum von, Datum bis);
 	// Medium in der Konsole ausgeben
-	void print() const;
+	virtual void print() const;
     //abstrakte methode
     virtual Medium* clone() const=0;
 };
