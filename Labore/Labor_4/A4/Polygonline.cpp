@@ -4,15 +4,27 @@
 
 // Konstruktoren
 Polygonline::Polygonline() {
+	if (debugConstructor)
+		std::cout << "Konstruktor der Klasse PolygonLine, Objekt: " << getId()
+			<< std::endl;
+
 	start = nullptr;
 	end = nullptr;
 }
 Polygonline::Polygonline(Point point) {
+	if (debugConstructor)
+		std::cout << "Konstruktor der Klasse PolygonLine, Objekt: " << getId()
+			<< std::endl;
+
 	start = new PlgElement(point);
 	end = start;
 }
 
 Polygonline::Polygonline(const std::string s) {
+	if (debugConstructor)
+		std::cout << "Konstruktor der Klasse PolygonLine, Objekt: " << getId()
+			<< std::endl;
+
 	size_t pos = 0;
 	start = nullptr;
 	end = nullptr;
@@ -28,6 +40,10 @@ Polygonline::Polygonline(const std::string s) {
 
 // Destruktor
 Polygonline::~Polygonline() {
+	if (debugConstructor)
+		std::cout << "Destruktor der Klasse PolygonLine, Objekt: " << getId()
+			<< std::endl;
+
 	while (start != nullptr) {
 		PlgElement* tmp = start->next;
 		delete start;

@@ -7,4 +7,5 @@ class DrawingObject: public ObjectCounter
 {
 	public:
 		DrawingObject();
+		~DrawingObject();
 };

@@ -4,12 +4,18 @@
 
 Circle::Circle(Point centre/*=Point()*/, double radius /*=0*/)
 {
-    this->centre.setX(centre.getX());
+    if (debugConstructor)
+		 std::cout << "Konstruktor der Klasse Circle, Objekt: " << getId()
+			 << std::endl;
+	 this->centre.setX(centre.getX());
 	 this->centre.setY(centre.getY());
     this->radius = radius;
 }
 
 Circle::Circle(const std::string s) {
+    if (debugConstructor)
+		 std::cout << "Konstruktor der Klasse Circle, Objekt: " << getId()
+			 << std::endl;
 	float r = 0.0;
 	Point tmp = Point(s);
 	centre.setX(tmp.getX());

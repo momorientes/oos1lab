@@ -1,11 +1,20 @@
+#include <iostream>
 #include "ObjectCounter.hpp"
 
+extern bool debugConstructor;
+
 ObjectCounter::ObjectCounter(): id(++maxId) {
+	if (debugConstructor)
+		std::cout << "Konstruktor der Klasse ObjectCounter, Objekt: " << getId()
+			<< std::endl;
 	number++;	
 }
 
 ObjectCounter::~ObjectCounter() {
-	number--;
+	if (debugConstructor)
+		std::cout << "Destruktor der Klasse ObjectCounter, Objekt: " << getId()
+			<< std::endl;
+		number--;
 }
 
 int ObjectCounter::getId() const {

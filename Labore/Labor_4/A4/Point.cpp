@@ -4,11 +4,17 @@
 
 Point::Point(double x/*=0*/, double y/*=0*/)
 {
-    this->x = x;
-    this->y = y;
+	if (debugConstructor)
+		std::cout << "Konstruktor der Klasse Point, Objekt: " << getId()
+			<< std::endl;
+	this->x = x;
+	this->y = y;
 }
 
 Point::Point(const std::string s) {
+	if (debugConstructor)
+		std::cout << "Konstruktor der Klasse Point, Objekt: " << getId()
+			<< std::endl;
 	float x = 0.0, y = 0.0;
 
 	sscanf(s.substr(s.find("(")).c_str(), "(%f, %f)", &x, &y);
@@ -16,6 +22,12 @@ Point::Point(const std::string s) {
 	this->x = x, this->y = y;
 }
 
+Point::~Point() {
+	if (debugConstructor)
+		std::cout << "Destruktor der Klasse Point, Objekt: " << getId()
+			<< std::endl;
+}
+	
 void Point::setX(double x)
 {
     this->x = x;

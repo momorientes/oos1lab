@@ -3,5 +3,12 @@
 
 DrawingObject::DrawingObject() {
 	if (debugConstructor) 
-		std::cout << "Konstruktor der Klasse DrawingObject, Objekt: " << getId() << std::endl;
+		std::cout << "Konstruktor der Klasse DrawingObject, Objekt: " << getId()
+			<< std::endl;
+}
+
+DrawingObject::~DrawingObject() {
+	if (debugConstructor)
+		std::cout << "Destruktor der Klasse DrawingObject, Objekt: " << getId() 
+			<< std::endl;
 }

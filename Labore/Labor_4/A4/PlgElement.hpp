@@ -6,4 +6,5 @@ struct PlgElement {
 	PlgElement* next;
 
 	PlgElement(Point point);
+	~PlgElement();
 };
