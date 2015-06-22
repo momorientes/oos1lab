@@ -19,7 +19,7 @@ class Medium {
 	const int jahr;
 	// Typ des Mediums (z.B. Buch, DVD, ...)
 	// wird von den abgeleiteten Klassen festgelegt
-	const string typ;
+	//const string typ;
 	// ausgeliehen von
 	Person * ausleiher;
 	// ausgeliehen am 
