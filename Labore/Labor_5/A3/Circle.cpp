@@ -71,6 +71,10 @@ std::string Circle::toString() const
     return out.str();
 }
 
+Circle* Circle::clone() const {
+	return new Circle(*this);
+}
+
 std::ostream& operator<<(std::ostream& out, const Circle& c) 
 {
     out << c.toString();

@@ -8,15 +8,17 @@ class MyList{
     };
     private:
         MyListElement *first, *last;
-        int size;
+        int _size;
     public:
         MyList();
         void push_back(const MyData&);
         void pop_back();
-        MyListElement front();
-        MyListElement back();
+        MyData& front() const;
+        MyData& back() const;
         void clear();
         bool empty();
-        int getSize();
+        int size() const;
+		  void print() const;
+		  const MyList operator+(const MyList&) const;
 
 };

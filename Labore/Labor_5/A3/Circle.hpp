@@ -15,7 +15,8 @@ class Circle : public OneDimObject
         void move(double dx, double dy);
         void print(bool endl=true) const;
         std::string toString() const;
-        friend std::ostream& operator<<(std::ostream&, const Circle&);
+        Circle* clone() const;
+		  friend std::ostream& operator<<(std::ostream&, const Circle&);
     private:
         Point centre;
         double radius;

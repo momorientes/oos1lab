@@ -21,6 +21,7 @@ class Point : public DrawingObject {
         Point operator+(const double d) const;
 		  Point operator-(const Point& p) const;
 		  Point operator-() const;
+		  Point* clone() const;
 		  Point& operator++();
 		  Point operator++(int);
 		  friend std::ostream& operator<<(std::ostream&, const Point&);

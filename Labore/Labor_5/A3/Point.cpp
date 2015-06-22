@@ -122,3 +122,6 @@ Point operator+(const double d, const Point &p) {
 	return Point(p.x + d, p.y + d); 
 }
 
+Point* Point::clone() const {
+	return new Point(*this);
+}
