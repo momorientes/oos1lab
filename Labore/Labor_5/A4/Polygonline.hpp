@@ -20,5 +20,6 @@ public:
 	Polygonline& operator+(const Point &p);
 	Polygonline& operator+(const Polygonline &l);
     std::string toString() const;
+	void print(bool) const;
     friend std::ostream& operator<<(std::ostream&, const Polygonline&);
 };

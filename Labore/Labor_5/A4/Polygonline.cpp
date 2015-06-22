@@ -108,6 +108,10 @@ std::string Polygonline::toString() const
     return out.str();
 }
 
+void Polygonline::print(bool printEndl) const {
+	std::cout << this->toString() << (printEndl ? "\n" : "");
+}
+
 Polygonline& Polygonline::operator+(const Point &p) {
 	addPoint(p);
 	return *this;
