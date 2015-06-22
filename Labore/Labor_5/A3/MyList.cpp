@@ -16,6 +16,24 @@ void MyList::push_back(const MyData& data)
     element->next = nullptr;
 }
 
+void MyList::pop_back() {
+	delete last;
+
+	// FIXME
+	MyList::MyListElement *tmp = first;
+	while (tmp->next)
+		tmp = tmp->next;
+
+}
+
+void MyList::clear() {
+	// FIXME: clear
+}
+
+bool MyList::empty() const {
+	return _size > 0;
+}
+
 MyData& MyList::front() const {
 	return *(first->data);
 }	

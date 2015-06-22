@@ -3,6 +3,9 @@
 
 extern bool debugConstructor;
 
+unsigned int ObjectCounter::maxId = 0;
+unsigned int ObjectCounter::number = 0;
+
 ObjectCounter::ObjectCounter(): id(++maxId) {
 	if (debugConstructor)
 		std::cout << "Konstruktor der Klasse ObjectCounter, Objekt: " << getId()

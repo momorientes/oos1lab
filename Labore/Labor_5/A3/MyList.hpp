@@ -16,7 +16,7 @@ class MyList{
         MyData& front() const;
         MyData& back() const;
         void clear();
-        bool empty();
+        bool empty() const;
         int size() const;
 		  void print() const;
 		  const MyList operator+(const MyList&) const;
