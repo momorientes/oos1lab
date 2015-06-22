@@ -14,20 +14,32 @@ void MyList::push_back(const MyData& data)
 	MyList::MyListElement *element = new MyListElement();
     element->data = data.clone();
     element->next = nullptr;
+    _size++;
 }
 
 void MyList::pop_back() {
-	delete last;
-
-	// FIXME
 	MyList::MyListElement *tmp = first;
-	while (tmp->next)
-		tmp = tmp->next;
-
+	while (tmp->next){
+        if (tmp->next == last){
+            tmp->next = nullptr;
+            delete last;
+            last = tmp;
+        } else {
+            tmp = tmp->next;
+        }
+    }
+    _size--;
 }
 
 void MyList::clear() {
-	// FIXME: clear
+    MyList::MyListElement *tmp = first;
+    while(tmp->next)
+    {
+        MyList::MyListement *prev = tmp;
+        tmp = tmp->next;
+        delete prev;
+    }
+    _size = 0;
 }
 
 bool MyList::empty() const {
@@ -51,5 +63,6 @@ int MyList::size() const {
 }
 
 const MyList MyList::operator+(const MyList& l) const {
-	// FIXME:: append...
+    MyList ret = new MyList();
+
 }
