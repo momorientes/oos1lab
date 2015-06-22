@@ -22,6 +22,13 @@ Point::Point(const std::string s) {
 	this->x = x, this->y = y;
 }
 
+Point::Point(const Point & p) {
+	x = p.x;
+	y = p.y;
+	if (debugConstructor)
+		std::cout << "Kopierkonstruktor der Klasse Point, Objekt: " << getId()
+			<< std::endl;
+}
 Point::~Point() {
 	if (debugConstructor)
 		std::cout << "Destruktor der Klasse Point, Objekt: " << getId()
