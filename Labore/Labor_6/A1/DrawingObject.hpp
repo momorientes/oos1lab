@@ -14,11 +14,11 @@ class DrawingObject: public ObjectCounter
         const int id;
         public:
             GraphException(int id);
+            int getId() const;
     };
 
     class IdTooHigh : public GraphException {
         public:
             IdTooHigh(int id);
-            int getId() const;
     };
 };

@@ -22,4 +22,10 @@ public:
     std::string toString() const;
 	void print(bool) const;
     friend std::ostream& operator<<(std::ostream&, const Polygonline&);
+    void checkCircular() const;
+
+    class LoopInLine: public DrawingObject::GraphException{
+        public:
+            LoopInLine(int id);
+    };
 };

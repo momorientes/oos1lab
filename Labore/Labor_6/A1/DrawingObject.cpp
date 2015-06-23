@@ -16,8 +16,13 @@ DrawingObject::~DrawingObject() {
 DrawingObject::GraphException::GraphException(int id): id(id) {
 }
 
+int DrawingObject::GraphException::getId() const{
+    return this->id;
+}
+
 DrawingObject::IdTooHigh::IdTooHigh(int id): GraphException(id) {
 }
+
 
 void DrawingObject::check() const{
     if(this->getId() > this->getMaxId())

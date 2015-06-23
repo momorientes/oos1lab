@@ -44,6 +44,12 @@ Polygonline::~Polygonline() {
 		std::cout << "Destruktor der Klasse PolygonLine, Objekt: " << getId()
 			<< std::endl;
 
+    try {
+        checkCircular();
+    } catch (Polygonline::LoopInLine& e) {
+        std::cout << "caught LoopInLine exception " << e.getId() << std::endl;
+        return;
+    }
 	while (start != nullptr) {
 		PlgElement* tmp = start->next;
 		delete start;
@@ -92,6 +98,7 @@ Polygonline& Polygonline::print(bool endl /*= true*/) {
 
 std::string Polygonline::toString() const
 {
+    checkCircular();
     std::ostringstream out;
     out << "|";
     PlgElement* tmp = this->start;
@@ -106,6 +113,26 @@ std::string Polygonline::toString() const
     }
     out << "|";
     return out.str();
+}
+
+void Polygonline::checkCircular() const
+{
+    PlgElement *slow = this->start;
+
+    while(slow)
+    {
+        PlgElement *fast;
+        fast = slow->next;
+        while(fast)
+        {
+           if(slow == fast)
+            {
+               throw LoopInLine(this->getId());
+            }
+            fast = fast->next;
+        }
+        slow = slow->next;
+    }
 }
 
 void Polygonline::print(bool printEndl) const {
@@ -125,4 +152,7 @@ std::ostream& operator<<(std::ostream& out, const Polygonline& pl)
 {
     out << pl.toString();
     return out;
+}
+
+Polygonline::LoopInLine::LoopInLine(int id): DrawingObject::GraphException(id) {
 }

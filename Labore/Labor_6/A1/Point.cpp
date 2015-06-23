@@ -63,6 +63,7 @@ void Point::move(double dx, double dy)
 
 void Point::print(bool endl /*=true*/) const
 {
+    DrawingObject::check();
     std::cout << "(" << this->x << ", ";
     std::cout << this->y <<")"; 
     if(endl)
